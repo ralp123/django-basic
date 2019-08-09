@@ -1,0 +1,32 @@
+<!-- To load Css -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'members/styles.css' %}">
+<!-- To load Css -->
+
+{% if list_of_members %}
+    <table>
+    <thead>
+    	<tr>
+    		<th>First Name</th>
+    		<th>Middle Name</th>
+    		<th>Last Name</th>
+    		<th>Gender</th>
+    		<th>Actions</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	{% for mem in list_of_members %}
+        	<tr>
+        		<td>{{ mem.first_name }}</td>
+        		<td>{{ mem.mid_name }}</td>
+        		<td>{{ mem.last_name }}</td>
+        		<td>{{ mem.gender }}</td>
+        		<td><button>test</button></td>
+        	</tr>
+    	{% endfor %}
+    </tbody>
+    
+    </table>
+{% else %}
+    <p>No members are available.</p>
+{% endif %}
